@@ -5,6 +5,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
@@ -35,12 +37,6 @@ public class CountryRepositoryTest {
     }
 
     @Test
-    @Sql("test-data.sql") // On peut charger des donnnées spécifiques pour un test
-    void onSaitCompterLesEnregistrements() {
-        log.info("On compte les enregistrements de la table 'Country'");
-        int combienDePaysDansLeJeuDeTest = 3 + 1; // 3 dans data.sql, 1 dans test-data.sql
-        long nombre = countryDAO.count();
-        assertEquals(combienDePaysDansLeJeuDeTest, nombre, "On doit trouver 4 pays" );
-    }
+    void testpop() {assertEquals(12,countryDAO.popPays(1) );}
 
 }

@@ -1,2 +1,6 @@
-package monprojet.dao;public interface PopParPay {
+package monprojet.dao;
+
+public interface PopParPay {
+    String getNom();
+    Integer getPop();
 }
